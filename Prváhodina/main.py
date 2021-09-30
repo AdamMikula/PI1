@@ -28,11 +28,11 @@ day = 5
 #f day == 5:
    #print("piatok")
 
+vek = input ("zadaj svoj vek")
+username = input ("zadaj prihlasovacie meno ")
+password = input ("zadaj prihlasovacie heslo ")
 
-stastny = input("si stastny? ")
-bohaty = input("si bohaty ")
-
-if stastny == "ano":
-    if bohaty == "ano":
-   
-
+if username == "root" and password == "password" or vek == 18:
+    print("uspesne si sa prihlasil!")
+else:
+    print("zle meno alebo heslo")
