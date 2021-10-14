@@ -16,23 +16,33 @@
   #rint("chyba! 0 sa delit neda")
 #else:
     #print("delenie", a/b)
-day = 5
+#day = 5
 
-#f day == 1:
-   #print("pondelok")
-#f day == 2:
-  #print("utorok")
-#f day == 3:
-   #print("streda")
-#   print("stvrtok")
-#f day == 5:
-   #print("piatok")
 
-vek = input ("zadaj svoj vek")
-username = input ("zadaj prihlasovacie meno ")
-password = input ("zadaj prihlasovacie heslo ")
 
-if username == "root" and password == "password" or vek == 18:
-    print("uspesne si sa prihlasil!")
+"""
+Vek = int(input("Zadaj svoj vek"))
+
+if Vek >= 18:
+    print("mozes ist dalej")
 else:
-    print("zle meno alebo heslo")
+     print("nemozes si mac mladý")
+"""
+
+"""
+Password = (input("Zadaj svoje heslo: "))
+
+if Password == "adam":
+    print("si medzi nami")
+else:
+    print("si blbec maš zlé heslo")
+"""
+"""
+X = int(input("zadaj prvé číslo: "))
+Y = int(input("zadaj druhé číslo: "))
+
+print("výsledok násobenia sa rovná: ", X*Y)
+print("výsledok delenia sa rovná: ", X/Y)
+print("výsledok súčtu sa rovná: ", X+Y)
+print("výsledok rozdielu sa rovná: ", X-Y)
+"""
