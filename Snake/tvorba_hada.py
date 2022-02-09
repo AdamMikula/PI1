@@ -10,6 +10,7 @@ zelena = (204,255,153)
 modra = (0,255,255)
 black = (0,0,0)
 
+pygame.mixer.music.load()
 
 plocha = pygame.display.set_mode((sirka, vyska))
 plocha.fill(zelena)
