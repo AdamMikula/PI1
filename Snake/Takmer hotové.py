@@ -14,10 +14,8 @@ modra = (0,255,255)
 black = (0,0,0)
 cervena = (255, 0, 0)
 
-body = 0
-
 plocha = pygame.display.set_mode((sirka, vyska,))
-plocha.fill(zelena)
+
 pygame.display.update()
 
 velkost_hada = 10
@@ -53,10 +51,14 @@ suradnica_textY2 = 150
 suradnica_textX3 = 190
 suradnica_textY3 = 250
 
+body = 0
+
 prehra = False
 
 while not prehra:
-    pygame.draw.rect(plocha, modra, [suradnicaX, suradnicaY, velkost_hada, dlzka_hada])
+    plocha.fill(zelena)
+
+    had = pygame.draw.rect(plocha, modra, [suradnicaX, suradnicaY, velkost_hada, dlzka_hada])
 
     jablko = pygame.draw.rect(plocha, cervena,
                               [suradnica_jablkoX, suradnica_jablkoY, velkost_jablka, velkost_jablka])
@@ -87,15 +89,15 @@ while not prehra:
     suradnicaX += dx
     suradnicaY += dy
 
-    hodiny.tick(20)
+    hodiny.tick(15)
 
-    if suradnicaX+-5 == suradnica_jablkoX+-5 and suradnicaY+-5 == suradnica_jablkoY+-5:
+    while suradnicaX == suradnica_jablkoX and suradnicaY == suradnica_jablkoY:
         body += 1
         suradnica_jablkoX = random.randrange(1, (sirka // 10)) * 10
         suradnica_jablkoY = random.randrange(1, (vyska // 10)) * 10
         pygame.mixer.Sound.play(audio1)
 
-    vypisanie_textu = typ_pismen.render(f"Score: {body}", True, black)
+    vypisanie_textu = typ_pismen.render("Počet bodov: " + str(body), True, silno_modra)
     plocha.blit(vypisanie_textu, (suradnica_textX, suradnica_textY))
 
     pygame.display.update()
@@ -105,6 +107,7 @@ if prehra:
     pygame.mixer.Sound.play(audio3)
 
 while prehra:
+    plocha.fill(zelena)
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
@@ -116,11 +119,6 @@ while prehra:
     plocha.blit(vypisanie_textu3, (suradnica_textX3, suradnica_textY3))
 
     pygame.display.update()
-
-
-
-
-
 
 
 
